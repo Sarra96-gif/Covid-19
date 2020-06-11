@@ -1,0 +1,139 @@
+@font-face {
+    src: url(fonts/Roboto-Regular.ttf);
+    font-family: roboto;
+}
+@font-face {
+    src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
+    font-family: playFair;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+font-size: calc(1em + 1vw);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+body .top-section {
+    position: relative;
+    width: 80%;
+    font-family: playFair;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.321);
+}
+body .top-section a{
+    position: relative;
+    left: 30%;
+    text-decoration: none;
+    color: black;
+}
+body  .upload-area {
+    position: relative;
+    width: 95%;
+    height: 20em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+body  .upload-area .left-section {
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+body  .upload-area .left-section .container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: playFair;
+    border: 2px dashed rgba(0, 0, 0, 0.321);
+    background-color: rgba(220, 220, 220, 0.13);
+}
+body  .upload-area .left-section .container label{
+    cursor: pointer;
+}
+body  .upload-area .right-section {
+    position: relative;
+    width: 55%;
+    height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+body  .upload-area .right-section .uploading {
+    margin: .7em;
+    font-family: playFair;
+    font-size: .8em;
+}
+body  .upload-area .right-section .item {
+    position: relative;
+    width: 90%;
+    height: 2.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: .7em;
+}
+body  .upload-area .right-section .item .top{
+    position: relative;
+    font-size: .6em;
+    height: calc(40% - .4em);
+    width: 100%;
+    font-family: roboto;
+    font-weight: bolder;
+    padding: .2em;
+    margin: .1em 0;
+    background-color: transparent;
+}
+body  .upload-area .right-section .item .top span {
+    font-weight: normal;
+    margin-left: 2em;
+    font-size: 0.9em;
+    color: #3498db;
+    
+}
+body  .upload-area .right-section .item .line {
+    position: relative;
+    width: 80%;
+    height: .2em;
+    background-color:rgba(220, 220, 220, 0.13);
+    border-radius: 50px;
+    overflow: hidden;
+}
+body  .upload-area .right-section .item .line .prog {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #3498db;
+    transition: .5s width ease-in;
+}
+body .upload-area .right-section .item .bottom-section {
+    position: relative;
+    font-size: .5em;
+    font-family: roboto;
+}
+body .upload-area .right-section .item .bottom-section span {
+    font-weight: normal ;
+    color: #3498db;
+}
+@media(max-width:768px){
+    body .upload-area {
+        flex-direction: column;
+    }
+    body .upload-area .left-section ,body .upload-area .right-section {
+        width: 90%;
+    }
+}
