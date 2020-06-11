@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <title>Covid 19 predictions </title>
+  </head>
+  <body>
+    <div class="top-section">
+      File Upload
+      <a href="contact-admin.php">Coments</a>
+    </div>
+    <div class="upload-area">
+      <div class="left-section">
+        <div class="container">
+          <input type="file" id="file" multiple hidden />
+          <label for="file">upload files</label>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="uploading">Downloads</div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+      var file = document.getElementById("file");
+      file.onchange = () => {
+        var element = file.files[0];
+          var random = getRandomInt(90);
+          var file_name = element.name;
+          var file_size = (element.size / 1000000).toFixed(2);
+          var item =
+            '<div class="top"><div>' +
+            file_name +
+            "<span>" +
+            file_size +
+            'mb</span></div> </div> <div class="line"><div class="prog"></div></div> <div class="bottom-section"> <div> <span></span> done</div> </div>';
+          $(".right-section").append(
+            "<div class='item num" + random + "'>" + item + "</div>"
+          );
+          setTimeout(() => {
+            var xhr = new XMLHttpRequest();
+            var formdata = new FormData();
+            formdata.append("myfile[]", element);
+            xhr.open("POST", "checkUpload.php", true);
+            xhr.upload.onprogress = function (evt) {
+              var per = ((evt.loaded / evt.total) * 100).toFixed(0);
+              document.querySelector(".num" + random + " .prog").style.width =
+                per + "%";
+              document.querySelector(
+                ".num" + random + " .bottom-section span"
+              ).innerHTML = per + "%";
+            };
+            xhr.onload = function () {
+              if(xhr.status==200){
+                alert(file_name + "Fichier envoyé avec succès");
+              }
+            }
+            xhr.send(formdata);
+          }, 100);
+        
+      };
+    </script>
+  </body>
+</html>
