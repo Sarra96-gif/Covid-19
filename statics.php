@@ -43,8 +43,9 @@
                      d’apprendre sans avoir été programmés explicitement à cet effet. Pour apprendre et se développer, 
                      les ordinateurs ont toutefois besoin de données à analyser et sur lesquelles s’entraîner. 
                      De fait, le Big Data est l’essence du Machine Learning, et  c’est la technologie qui permet d’exploiter
-                     pleinement le potentiel du Big Data. <br><br><br> Chers utilisateurs, <br><br> Veuillez trouver sur notre site  analyses prédictives concernant la situation sanitaire actuelle. 
-                     <br><br><br>Notre modèle est alimenté par des données 100% fiables et exposées sur le site du gouvernement.
+                     pleinement le potentiel du Big Data.<br><br><br><br>Parce qu’on est tous curieux de savoir ce que le future nous cache, on ne se prive pas !
+On a donc utilisé les prédictions fournies par notre modèle Machine Learning, et on les a mises à votre disposition pour les explorer. Il suffit de choisir le fichier qui vous intéresse, et ensuite vous pouvez le télécharger !
+
                     </p>
             
             <?php
